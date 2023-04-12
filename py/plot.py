@@ -1,6 +1,15 @@
-import matplotlib.pyplot as mpl
-
-
-mpl.plot([1, 2, 3, 4])
-mpl.ylabel('some numbers')
-mpl.show()
+# Python program to demonstrate
+# main() function
+  
+  
+print("Hello")
+  
+# Defining main function
+def main():
+    print("hey there")
+  
+  
+# Using the special variable 
+# __name__
+if __name__=="__main__":
+    main()

@@ -52,7 +52,7 @@ class AnimationPlot:
         
 
     def getPlotFormat(self):
-        ax.set_ylim([0, 100])
+        ax.set_ylim([0, 500])
         ax.set_title("Distance")
         ax.set_ylabel("Time")
 

@@ -20,7 +20,10 @@ serialInst.baudrate = 9600
 serialInst.port = portVar
 serialInst.open()
 
+counter = 0
 while True:
 	if serialInst.in_waiting:
 		packet = serialInst.readline()
 		print(packet.decode('utf'))
+		counter = counter+ 1
+		print(counter)
