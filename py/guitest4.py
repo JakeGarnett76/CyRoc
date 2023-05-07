@@ -9,13 +9,13 @@ NavigationToolbar2Tk)
 
 class AnimationPlot:
     def animate(self, i, dataList, ser):
-        ##Errrrrror
         arduinoData_string = ser.readline().decode('ascii')
         newData = arduinoData_string.split()
 
         try:
                 dataList.append(float(newData[6]))
                 print(float(newData[6]))
+                myString.set("Current Altitude: " + str(newData[6]))
 
         except:
                 pass
@@ -27,13 +27,13 @@ class AnimationPlot:
 
     def getPlotFormat(self):
         ax.set_ylim([0, 1000])
-        ax.set_title("x")
-        ax.set_ylabel("y")
+        ax.set_title("Time")
+        ax.set_ylabel("Particle Density")
 
 window = Tk()
 
 # setting the title 
-window.title('cyroc')
+window.title('CyRoc')
   
 # dimensions of the main window
 window.geometry("800x800")
@@ -53,6 +53,11 @@ realTimePlot = AnimationPlot()
 ser = serial.Serial("COM10", 9600)
 
 time.sleep(1)
+
+myString = StringVar()
+altitude = myString.get()
+w = Label(window, textvariable=myString)
+w.pack(side=RIGHT)
 
 canvas = FigureCanvasTkAgg(fig, master=window)
 canvas.draw()
